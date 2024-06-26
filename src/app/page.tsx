@@ -1,113 +1,348 @@
-import Image from 'next/image'
+"use client";
+import React, { useEffect } from "react";
+import { MdOutlineStarBorder } from "react-icons/md";
 
-export default function Home() {
+const Page = () => {
+  useEffect(() => {
+    // Load the Instagram embed script after component mounts
+    const script = document.createElement("script");
+    script.async = true;
+    script.src = "//www.instagram.com/embed.js";
+    document.body.appendChild(script);
+  }, []);
+
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">src/app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
+    <div className="flex flex-col rounded-[3px] md:flex-row gap-4 text-black  p-2 ">
+      <blockquote
+        className="instagram-media w-full md:w-1/3"
+        data-instgrm-captioned
+        data-instgrm-permalink="https://www.instagram.com/p/C8jerF0tRiC/?utm_source=ig_embed&amp;utm_campaign=loading"
+        data-instgrm-version="14"
+        style={{
+          background: "#FFFF",
+          borderRadius: "3px",
+          boxShadow: "0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15)",
+          margin: "1px",
+          maxWidth: "800px",
+          minWidth: "326px",
+        }}
+      >
+        <div style={{ padding: "16px" }}>
           <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
+            href="https://www.instagram.com/p/C8jerF0tRiC/?utm_source=ig_embed&amp;utm_campaign=loading"
+            style={{
+              background: "#FFFFFF",
+              lineHeight: 0,
+              padding: 0,
+              textAlign: "center",
+              textDecoration: "none",
+              width: "100%",
+            }}
             target="_blank"
             rel="noopener noreferrer"
           >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "row",
+                alignItems: "center",
+              }}
+            >
+              <div
+                style={{
+                  backgroundColor: "#F4F4F4",
+                  borderRadius: "50%",
+                  flexGrow: 0,
+                  height: "40px",
+                  marginRight: "14px",
+                  width: "40px",
+                }}
+              ></div>
+              <div
+                style={{
+                  display: "flex",
+                  flexDirection: "column",
+                  flexGrow: 1,
+                  justifyContent: "center",
+                }}
+              >
+                <div
+                  style={{
+                    backgroundColor: "#F4F4F4",
+                    borderRadius: "4px",
+                    flexGrow: 0,
+                    height: "14px",
+                    marginBottom: "6px",
+                    width: "100px",
+                  }}
+                ></div>
+                <div
+                  style={{
+                    backgroundColor: "#F4F4F4",
+                    borderRadius: "4px",
+                    flexGrow: 0,
+                    height: "14px",
+                    width: "60px",
+                  }}
+                ></div>
+              </div>
+            </div>
+            <div style={{ padding: "19% 0" }}></div>
+            <div
+              style={{
+                display: "block",
+                height: "50px",
+                margin: "0 auto 12px",
+                width: "50px",
+              }}
+            >
+              <svg
+                width="50px"
+                height="50px"
+                viewBox="0 0 60 60"
+                version="1.1"
+                xmlns="https://www.w3.org/2000/svg"
+                xmlnsXlink="https://www.w3.org/1999/xlink"
+              >
+                <g stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
+                  <g
+                    transform="translate(-511.000000, -20.000000)"
+                    fill="#000000"
+                  >
+                    <g>
+                      <path d="M556.869,30.41 C554.814,30.41 553.148,32.076 553.148,34.131 C553.148,36.186 554.814,37.852 556.869,37.852 C558.924,37.852 560.59,36.186 560.59,34.131 C560.59,32.076 558.924,30.41 556.869,30.41 M541,60.657 C535.114,60.657 530.342,55.887 530.342,50 C530.342,44.114 535.114,39.342 541,39.342 C546.887,39.342 551.658,44.114 551.658,50 C551.658,55.887 546.887,60.657 541,60.657 M541,33.886 C532.1,33.886 524.886,41.1 524.886,50 C524.886,58.899 532.1,66.113 541,66.113 C549.9,66.113 557.115,58.899 557.115,50 C557.115,41.1 549.9,33.886 541,33.886 M565.378,62.101 C565.244,65.022 564.756,66.606 564.346,67.663 C563.803,69.06 563.154,70.057 562.106,71.106 C561.058,72.155 560.06,72.803 558.662,73.347 C557.607,73.757 556.021,74.244 553.102,74.378 C549.944,74.521 548.997,74.552 541,74.552 C533.003,74.552 532.056,74.521 528.898,74.378 C525.979,74.244 524.393,73.757 523.338,73.347 C521.94,72.803 520.942,72.155 519.894,71.106 C518.846,70.057 518.197,69.06 517.654,67.663 C517.244,66.606 516.755,65.022 516.623,62.101 C516.479,58.943 516.448,57.996 516.448,50 C516.448,42.003 516.479,41.056 516.623,37.899 C516.755,34.978 517.244,33.391 517.654,32.338 C518.197,30.938 518.846,29.942 519.894,28.894 C520.942,27.846 521.94,27.196 523.338,26.654 C524.393,26.244 525.979,25.756 528.898,25.623 C532.057,25.479 533.004,25.448 541,25.448 C548.997,25.448 549.943,25.479 553.102,25.623 C556.021,25.756 557.607,26.244 558.662,26.654 C560.06,27.196 561.058,27.846 562.106,28.894 C563.154,29.942 563.803,30.938 564.346,32.338 C564.756,33.391 565.244,34.978 565.378,37.899 C565.522,41.056 565.552,42.003 565.552,50 C565.552,57.996 565.522,58.943 565.378,62.101 M570.82,37.631 C570.674,34.438 570.167,32.258 569.425,30.349 C568.659,28.377 567.633,26.702 565.965,25.035 C564.297,23.368 562.623,22.342 560.652,21.575 C558.743,20.834 556.562,20.326 553.369,20.18 C550.169,20.033 549.148,20 541,20 C532.853,20 531.831,20.033 528.631,20.18 C525.438,20.326 523.257,20.834 521.349,21.575 C519.376,22.342 517.703,23.368 516.035,25.035 C514.368,26.702 513.342,28.377 512.574,30.349 C511.834,32.258 511.326,34.438 511.181,37.631 C511.035,40.831 511,41.851 511,50 C511,58.147 511.035,59.17 511.181,62.369 C511.326,65.562 511.834,67.743 512.574,69.651 C513.342,71.625 514.368,73.296 516.035,74.965 C517.703,76.634 519.376,77.658 521.349,78.425 C523.257,79.167 525.438,79.673 528.631,79.82 C531.831,79.965 532.853,80.001 541,80.001 C549.148,80.001 550.169,79.965 553.369,79.82 C556.562,79.673 558.743,79.167 560.652,78.425 C562.623,77.658 564.297,76.634 565.965,74.965 C567.633,73.296 568.659,71.625 569.425,69.651 C570.167,67.743 570.674,65.562 570.82,62.369 C570.966,59.17 571,58.147 571,50 C571,41.851 570.966,40.831 570.82,37.631"></path>
+                    </g>
+                  </g>
+                </g>
+              </svg>
+            </div>
+            <div style={{ paddingTop: "8px" }}>
+              <div
+                style={{
+                  color: "#3897f0",
+                  fontFamily: "Arial,sans-serif",
+                  fontSize: "14px",
+                  fontStyle: "normal",
+                  fontWeight: 550,
+                  lineHeight: "18px",
+                }}
+              >
+                View this post on Instagram
+              </div>
+            </div>
+            <div style={{ padding: "12.5% 0" }}></div>
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "row",
+                marginBottom: "14px",
+                alignItems: "center",
+              }}
+            >
+              <div>
+                <div
+                  style={{
+                    backgroundColor: "#F4F4F4",
+                    borderRadius: "50%",
+                    height: "12.5px",
+                    width: "12.5px",
+                    transform: "translateX(0px) translateY(7px)",
+                  }}
+                ></div>
+                <div
+                  style={{
+                    backgroundColor: "#F4F4F4",
+                    height: "12.5px",
+                    transform: "rotate(-45deg) translateX(3px) translateY(1px)",
+                    width: "12.5px",
+                    flexGrow: 0,
+                    marginRight: "14px",
+                    marginLeft: "2px",
+                  }}
+                ></div>
+                <div
+                  style={{
+                    backgroundColor: "#F4F4F4",
+                    borderRadius: "50%",
+                    height: "12.5px",
+                    width: "12.5px",
+                    transform: "translateX(9px) translateY(-18px)",
+                  }}
+                ></div>
+              </div>
+              <div style={{ marginLeft: "8px" }}>
+                <div
+                  style={{
+                    backgroundColor: "#F4F4F4",
+                    borderRadius: "50%",
+                    flexGrow: 0,
+                    height: "20px",
+                    width: "20px",
+                  }}
+                ></div>
+                <div
+                  style={{
+                    width: 0,
+                    height: 0,
+                    borderTop: "2px solid transparent",
+                    borderLeft: "6px solid #f4f4f4",
+                    borderBottom: "2px solid transparent",
+                    transform:
+                      "translateX(16px) translateY(-4px) rotate(30deg)",
+                  }}
+                ></div>
+              </div>
+              <div style={{ marginLeft: "auto" }}>
+                <div
+                  style={{
+                    width: 0,
+                    borderTop: "8px solid #F4F4F4",
+                    borderRight: "8px solid transparent",
+                    transform: "translateY(16px)",
+                  }}
+                ></div>
+                <div
+                  style={{
+                    backgroundColor: "#F4F4F4",
+                    flexGrow: 0,
+                    height: "12px",
+                    width: "16px",
+                    transform: "translateY(-4px)",
+                  }}
+                ></div>
+                <div
+                  style={{
+                    width: 0,
+                    height: 0,
+                    borderTop: "8px solid #F4F4F4",
+                    borderLeft: "8px solid transparent",
+                    transform: "translateY(-4px) translateX(8px)",
+                  }}
+                ></div>
+              </div>
+            </div>
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                flexGrow: 1,
+                justifyContent: "center",
+                marginBottom: "24px",
+              }}
+            >
+              <div
+                style={{
+                  backgroundColor: "#F4F4F4",
+                  borderRadius: "4px",
+                  flexGrow: 0,
+                  height: "14px",
+                  marginBottom: "6px",
+                  width: "224px",
+                }}
+              ></div>
+              <div
+                style={{
+                  backgroundColor: "#F4F4F4",
+                  borderRadius: "4px",
+                  flexGrow: 0,
+                  height: "14px",
+                  width: "144px",
+                }}
+              ></div>
+            </div>
           </a>
+          <p
+            style={{
+              color: "#c9c8cd",
+              fontFamily: "Arial,sans-serif",
+              fontSize: "14px",
+              lineHeight: "17px",
+              marginBottom: 0,
+              marginTop: "8px",
+              overflow: "hidden",
+              padding: "8px 0 7px",
+              textAlign: "center",
+              textOverflow: "ellipsis",
+              whiteSpace: "nowrap",
+            }}
+          >
+            <a
+              href="https://www.instagram.com/p/C8jerF0tRiC/?utm_source=ig_embed&amp;utm_campaign=loading"
+              style={{
+                color: "#c9c8cd",
+                fontFamily: "Arial,sans-serif",
+                fontSize: "14px",
+                fontStyle: "normal",
+                fontWeight: "normal",
+                lineHeight: "17px",
+                textDecoration: "none",
+              }}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              A post shared by Alkohol (@ich.und.der.alkohol)
+            </a>
+          </p>
+        </div>
+      </blockquote>
+      <div className="flex flex-col gap-2 items-center h-full w-full ">
+        <div className="flex flex-col items-start w-full ">
+          <p className="font-semibold text-2xl text-start self-start">
+            Featured Items
+          </p>
+          <p className="opacity-50 text-start self-start">
+            Discover the items in this picture
+          </p>
+        </div>
+        <div className="w-full h-full grid grid-cols-1 md:grid-cols-2 gap-2">
+          {Array(6)
+            .fill({})
+            .map((arr, i) => (
+              <div
+                key={i}
+                className="bg-white shadow-sm h-full border-[1px] border-solid border-gray-200 text-black items-center rounded-[3px] p-2 w-full flex flex-row gap-2 "
+              >
+                <div className="bg-gray-300 rounded-[3px] md:aspect-video w-full h-full " />
+                <div className="flex flex-col h-full justify-evenly items-start gap-2 w-full">
+                  <div>
+                    <p className="font-semibold text-xl text-start self-start">
+                      Hat
+                    </p>
+                    <p className=" text-start self-start">50 USD</p>
+                  </div>
+
+                  <div className="flex flex-row items-center">
+                    {" "}
+                    <MdOutlineStarBorder />
+                    <MdOutlineStarBorder />
+                    <MdOutlineStarBorder />
+                    <MdOutlineStarBorder />
+                    <MdOutlineStarBorder />
+                    (5)
+                  </div>
+                  <a className="cursor-pointer p-2 px-12 text-center rounded-[3px] text-white bg-blue-400 hover:bg-blue-500 transition-all w-full md:w-auto">
+                    Buy
+                  </a>
+                </div>
+              </div>
+            ))}
+        </div>
+        <div className="bg-white shadow-sm h-full border-[1px] border-solid border-gray-200 text-black items-center rounded-[3px] p-2 w-full flex flex-col gap-3 ">
+          <p className="self-start text-start">More from Name</p>
+          <div className="flex flex-row w-full overflow-x-scroll gap-2 ">
+            {Array(6)
+              .fill({})
+              .map((arr, i) => (
+                <a
+                  key={i}
+                  className="bg-gray-300 rounded-[3px] shrink-0 w-40 h-52 hover:bg-gray-400 transition-all cursor-pointer"
+                ></a>
+              ))}
+          </div>
         </div>
       </div>
+    </div>
+  );
+};
 
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className="mb-32 grid text-center lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800 hover:dark:bg-opacity-30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore the Next.js 13 playground.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
-  )
-}
+export default Page;
