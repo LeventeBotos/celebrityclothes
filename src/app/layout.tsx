@@ -20,7 +20,7 @@ export default function RootLayout({
         <Navbar />
         <div className="mt-16 md:mt-20 px-2 md:px-5 ">{children}</div>
 
-        <footer className="w-full bg-[#1f1f1f] text-white h-36 flex flex-col justify-evenly text-center">
+        <footer className="w-full  bg-[#1f1f1f] text-white h-36 flex flex-col justify-evenly text-center">
           <p>
             Website made by{" "}
             <a
